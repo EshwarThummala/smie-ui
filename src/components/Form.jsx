@@ -4,6 +4,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import useUserDataContext from '../contexts/UserDataContext';
 import { useState } from 'react';
+import { fetchUserDetails } from '../api/filterApi';
 
 export default function UserForm() {
 
@@ -15,18 +16,18 @@ export default function UserForm() {
 
   function handleSubmit(data){
     data.preventDefault();
-    let newUserData = {}
+    let newFilters = {}
     if(minFollowerCount && maxFollowerCount){
-      newUserData["follower_filter"] = [minFollowerCount, maxFollowerCount]
+      newFilters["follower_filter"] = [minFollowerCount, maxFollowerCount]
     }
     if(keyword){
-      newUserData["keyword_filter"] = keyword
+      newFilters["keyword_filter"] = keyword
     }
     if(avgVideoViews){
-      newUserData["avgview_filter"] = avgVideoViews
+      newFilters["avgview_filter"] = avgVideoViews
     }
-    console.log(newUserData)
-    setUserData(newUserData)
+    console.log(newFilters)
+    fetchUserDetails(newFilters, setUserData)
   }
 
   return (
