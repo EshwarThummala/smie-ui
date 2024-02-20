@@ -1,21 +1,23 @@
-import { Container } from "react-bootstrap";
 import useUserDataContext from "../contexts/UserDataContext";
 import UserInfoCard from "./UserInfoCard";
 import '../css/UsersDisplay.css'
 
 export default function UsersDisplay() {
-  const { userData, setUserData } = useUserDataContext();
+  const { userData } = useUserDataContext();
   return userData.length ? (
-    <Container className="mt-4">
-      <div style={{ maxHeight: "750px", overflowY: "scroll"}}>
-        {userData.map((singleUserData) => (
-          <UserInfoCard
-            key={singleUserData.user_profile.author_uid}
-            userData={singleUserData}
-          />
-        ))}
+    <div>
+      <b>{userData.length} users</b>
+      <div className="mt-2">
+        <div style={{ maxHeight: "750px", overflowY: "scroll"}}>
+          {userData.map((singleUserData) => (
+            <UserInfoCard
+              key={singleUserData.user_profile.author_uid}
+              userData={singleUserData}
+            />
+          ))}
+        </div>
       </div>
-    </Container>
+    </div>
   ) : (
     <div>
       <h2>Sorry, No results found</h2>

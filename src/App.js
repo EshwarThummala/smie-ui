@@ -1,4 +1,6 @@
 import "bootstrap/dist/css/bootstrap.css";
+import 'mdb-react-ui-kit/dist/css/mdb.min.css';
+import "@fortawesome/fontawesome-free/css/all.min.css";
 import UserForm from './components/Form';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -9,7 +11,7 @@ import UsersDisplay from "./components/UsersDisplay";
 function App() {
   return (
     <UserDataProvider>
-    <Container>
+    <Container className="mt-2">
       <Row>
         <Col md={8} lg={8}>
           <UsersDisplay />
