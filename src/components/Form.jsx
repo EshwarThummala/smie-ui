@@ -1,4 +1,5 @@
 import Button from "react-bootstrap/Button";
+import { Alert } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
@@ -17,9 +18,15 @@ export default function UserForm() {
   const [username, setUsername] = useState("");
   const [instaId, setInstaId] = useState(false);
   const [ytId, setYtId] = useState(false);
+  const [error, setError] = useState('')
 
   function handleSubmit(data) {
     data.preventDefault();
+    if(parseInt(minFollowerCount) > parseInt(maxFollowerCount)){
+      setError("Minimum follower count should be greater than maximum follower count")
+    }
+    else {
+    setError('')
     let newFilters = {};
     if (minFollowerCount && maxFollowerCount) {
       newFilters["follower_filter"] = [minFollowerCount, maxFollowerCount];
@@ -46,11 +53,13 @@ export default function UserForm() {
     console.log(newFilters);
     fetchUserDetails(newFilters, setUserData);
   }
+  }
 
   return (
       <Card>
         <Card.Body>
         <Card.Title>Filters</Card.Title>
+        {error !== '' && <Alert variant="danger">{error}</Alert>}
         <Form>
           <InputGroup className="mb-1 mt-4">
             <InputGroup.Text>Min follower count</InputGroup.Text>
@@ -60,7 +69,6 @@ export default function UserForm() {
               onChange={(e) => setMinFollowerCount(e.target.value)}
             />
           </InputGroup>
-
           <InputGroup className="mb-4">
             <InputGroup.Text>Max follower count</InputGroup.Text>
             <Form.Control
