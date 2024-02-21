@@ -48,7 +48,6 @@ export default function UserForm() {
   }
 
   return (
-    <div>
       <Card>
         <Card.Body>
         <Card.Title>Filters</Card.Title>
@@ -120,13 +119,11 @@ export default function UserForm() {
               onChange={(e) => setUsername(e.target.value)}
             />
           </FloatingLabel>
-
           <Button variant="primary" type="submit" onClick={handleSubmit}>
             Apply Filters
           </Button>
         </Form>
         </Card.Body>
       </Card>
-    </div>
   );
 }

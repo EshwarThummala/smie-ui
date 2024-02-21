@@ -11,7 +11,7 @@ import UsersDisplay from "./components/UsersDisplay";
 function App() {
   return (
     <UserDataProvider>
-    <Container className="mt-2">
+    <Container className="mt-3">
       <Row>
         <Col md={8} lg={8}>
           <UsersDisplay />

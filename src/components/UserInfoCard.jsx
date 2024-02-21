@@ -1,8 +1,11 @@
 import Card from "react-bootstrap/Card";
 import { Row, Col } from "react-bootstrap";
 import { MDBBtn, MDBIcon } from "mdb-react-ui-kit";
+import UserModal from "./UserModal";
+import { useState } from "react";
 
 export default function UserInfoCard({ userData }) {
+  const [show, setShow] = useState(false);
   const calculate_avgviews = (posts) => {
     let posts_count = 0
     let views = posts.map(post => {
@@ -22,9 +25,18 @@ export default function UserInfoCard({ userData }) {
   const yt_id = social_media?.youtube_name;
   const avg_views = calculate_avgviews(posts_info)
   return (
-    <Card bg="light" className="mb-4" style={{ width: "50rem" }}>
+    <>
+    <UserModal show={show} setShow={setShow} userData={userData}/>
+    <Card bg="light" className="mb-4" style={{ width: "50rem" }} >
       <Card.Body>
-        <Card.Title>{user_profile.name}</Card.Title>
+        <Row>
+          <Col md={11}>
+            <Card.Title>{user_profile.name}</Card.Title>
+          </Col>
+          <Col className="text-right">
+          <i onClick={() => setShow(true)} class="fas fa-ellipsis-vertical" style={{ cursor: "pointer"}}></i>
+          </Col>
+        </Row>
         <Row>
           <Col md={3}>
             <Card.Subtitle className="mb-2 text-muted">
@@ -106,5 +118,6 @@ export default function UserInfoCard({ userData }) {
         </Card>
       </Card.Body>
     </Card>
+    </>
   );
 }
