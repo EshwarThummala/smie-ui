@@ -1,73 +1,47 @@
 # smie-ui
 The user interface enables users to apply filters and play with the social media data.
 
-# Getting Started with Create React App
+# Cloning and Setting Up a React Project Locally
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Follow these instructions to clone a React project created with Create React App from GitHub and set it up on your local machine.
 
-## Available Scripts
+## Prerequisites
+- Node.js and npm installed on your machine. You can download and install them from [here](https://nodejs.org/).
+- Make sure you install the lateest stable version.
+- verify your installation with the following commands.
+    ```bash
+    node -v
+    npm -v
+    ```
 
-In the project directory, you can run:
+## Steps
+- Open up a command line interface in your local path where you want to clone the repository
 
-### `npm start`
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/EshwarThummala/smie-ui.git
+   ```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. **Opening the Repository Folder**
+   ```bash
+   cd smie-ui
+   ```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+3. **Installing all the dependencies needed to run the project**
+    ```bash
+    npm install
+    ```
 
-### `npm test`
+4. **Running the application**
+    ```bash
+    npm start
+    ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+5. **Opening the localhost:3000**
+- The browser should automatically opened after the above command if not copy and paste the following url in the brower.
+    ```bash
+    http://localhost:3000
+    ```
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+6. **Playing with the Application**
+- After the application is opened, you will see a form, give your best input in there and see what kind of results fetches.

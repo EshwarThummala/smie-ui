@@ -33,10 +33,13 @@ export default function UserInfoCard({ userData }) {
       <Card bg="light" className="mb-4" style={{ width: "50rem" }}>
         <Card.Body>
           <Row>
-            <Col md={11}>
-              <Card.Title>{user_profile.name}</Card.Title>
+            <Col md={3}>
+              <Card.Title>{user_profile.name}</Card.Title>  
             </Col>
-            <Col className="text-right">
+            <Col md={8} align="end">
+            {user_profile?.country !== undefined && <Card.Text><i class="fa-solid fa-earth-americas"></i> {' '+user_profile.country}</Card.Text>}
+            </Col>
+            <Col md={1} aligin="end">
               <i
                 onClick={() => setShow(true)}
                 className="fas fa-ellipsis-vertical"
