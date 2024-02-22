@@ -7,7 +7,7 @@ import useUserDataContext from "../contexts/UserDataContext";
 import Card from "react-bootstrap/Card";
 import { Row, Col } from "react-bootstrap";
 import { useState } from "react";
-import { fetchUserDetails } from "../api/filterApi";
+import { fetchFilteredUserDetails } from "../api/filterApi";
 
 export default function UserForm() {
   const { setUserData } = useUserDataContext();
@@ -88,7 +88,7 @@ export default function UserForm() {
       if (countries.includes(country)) {
         newFilters["country_filter"] = country;
       }
-      fetchUserDetails(newFilters, setUserData);
+      fetchFilteredUserDetails(newFilters, setUserData);
     }
   }
 
@@ -164,7 +164,7 @@ export default function UserForm() {
             className="mb-4"
             onChange={(e) => setCountry(e.target.value)}
           >
-            <option>No Selection</option>
+            <option>No Country</option>
             {countries.map((country) => (
               <option key={country}>{country}</option>
             ))}
