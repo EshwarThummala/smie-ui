@@ -7,7 +7,7 @@ Follow these instructions to clone a React project created with Create React App
 
 ## Prerequisites
 - Node.js and npm installed on your machine. You can download and install them from [here](https://nodejs.org/).
-- Make sure you install the lateest stable version.
+- Make sure you install the latest stable version.
 - verify your installation with the following commands.
     ```bash
     node -v
@@ -38,10 +38,10 @@ Follow these instructions to clone a React project created with Create React App
     ```
 
 5. **Opening the localhost:3000**
-- The browser should automatically opened after the above command if not copy and paste the following url in the brower.
+- The browser should automatically open after the above command, if not, copy and paste the following url in the broswer.
     ```bash
     http://localhost:3000
     ```
 
 6. **Playing with the Application**
-- After the application is opened, you will see a form, give your best input in there and see what kind of results fetches.
+- After the application is opened, you will see a form, give your best input in there and see what kind of results the application fetches.
