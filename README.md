@@ -45,3 +45,7 @@ Follow these instructions to clone a React project created with Create React App
 
 6. **Playing with the Application**
 - After the application is opened, you will see a form, give your best input in there and see what kind of results the application fetches.
+
+**Note: Currently I configured the UI to call the API which is running at render.com (https://smie-api.onrender.com)**
+- If you want to run the SMIE-API(the API UI is using to retrieve data) locally, please go thorugh the documentation [here](https://github.com/EshwarThummala/smie-api).
+- And also change the host to localhost constant from renderApi constant mentioned in the api/filterApi.jsx file to make sure the UI is calling the API which is running locally. 

@@ -1,5 +1,8 @@
+const localhost = "http://127.0.0.1:5000"
+const renderApi = "https://smie-api.onrender.com/"
+
 export function fetchFilteredUserDetails(filters, setUserData){
-    fetch('http://127.0.0.1:5000',{
+    fetch(renderApi,{
           method : 'POST',
           headers: {
             'Content-Type' : 'application/json'
@@ -11,7 +14,7 @@ export function fetchFilteredUserDetails(filters, setUserData){
 }
 
 export function fetchUserDetails(setUserData){
-  fetch('http://127.0.0.1:5000',{
+  fetch(renderApi,{
         method : 'GET',
         headers: {
           'Content-Type' : 'application/json'

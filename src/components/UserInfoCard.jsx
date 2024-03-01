@@ -37,7 +37,7 @@ export default function UserInfoCard({ userData }) {
               <Card.Title>{user_profile.name}</Card.Title>  
             </Col>
             <Col md={8} align="end">
-            {user_profile?.country !== undefined && <Card.Text><i class="fa-solid fa-earth-americas"></i> {' '+user_profile.country}</Card.Text>}
+            {user_profile?.country !== undefined && <Card.Text><i className="fa-solid fa-earth-americas"></i> {' '+user_profile.country}</Card.Text>}
             </Col>
             <Col md={1} aligin="end">
               <i
