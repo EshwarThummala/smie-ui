@@ -4,6 +4,7 @@ import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import useUserDataContext from "../contexts/UserDataContext";
+import useSpinnerContext from "../contexts/SpinnerContext";
 import Card from "react-bootstrap/Card";
 import { Row, Col } from "react-bootstrap";
 import { useState } from "react";
@@ -11,6 +12,7 @@ import { fetchFilteredUserDetails } from "../api/filterApi";
 
 export default function UserForm() {
   const { setUserData } = useUserDataContext();
+  const { setLoader } = useSpinnerContext();
   const [minFollowerCount, setMinFollowerCount] = useState();
   const [maxFollowerCount, setMaxFollowerCount] = useState();
   const [keyword, setKeyword] = useState("");
@@ -88,7 +90,7 @@ export default function UserForm() {
       if (countries.includes(country)) {
         newFilters["country_filter"] = country;
       }
-      fetchFilteredUserDetails(newFilters, setUserData);
+      fetchFilteredUserDetails(newFilters, setUserData, setLoader);
     }
   }
 

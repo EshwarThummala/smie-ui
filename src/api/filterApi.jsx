@@ -1,7 +1,11 @@
+import useSpinnerContext from "../contexts/SpinnerContext"
+
 const localhost = "http://127.0.0.1:5000"
 const renderApi = "https://smie-api.onrender.com/"
 
-export function fetchFilteredUserDetails(filters, setUserData){
+
+export function fetchFilteredUserDetails(filters, setUserData, setLoader){
+    setLoader(true)
     fetch(renderApi,{
           method : 'POST',
           headers: {
@@ -10,10 +14,14 @@ export function fetchFilteredUserDetails(filters, setUserData){
             body: JSON.stringify(filters)
         })
         .then(response => response.json())
-        .then(jsonData => setUserData(jsonData))
+        .then(jsonData => {
+          setLoader(false)
+          setUserData(jsonData)
+        })
 }
 
-export function fetchUserDetails(setUserData){
+export function fetchUserDetails(setUserData, setLoader){
+  setLoader(true)
   fetch(renderApi,{
         method : 'GET',
         headers: {
@@ -21,5 +29,8 @@ export function fetchUserDetails(setUserData){
           },
       })
       .then(response => response.json())
-      .then(jsonData => setUserData(jsonData))
+      .then(jsonData => {
+        setLoader(false)
+        setUserData(jsonData)
+      })
 }
