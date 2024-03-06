@@ -1,5 +1,3 @@
-import useSpinnerContext from "../contexts/SpinnerContext"
-
 const localhost = "http://127.0.0.1:5000"
 const renderApi = "https://smie-api.onrender.com/"
 
